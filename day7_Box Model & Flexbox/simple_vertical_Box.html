@@ -1,149 +1,68 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vertical Box Cards</title>
-
-  <!-- Optional: Google font (will load when you open the file online) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#d9c9ef;         /* outer container background (pale purple) */
-      --card:#ffffff;       /* card background */
-      --accent:#3b2a63;     /* dark purple for headings */
-      --muted:#777777;      /* muted text */
-      --card-radius:8px;
-      --outer-radius:22px;
-      --gap:28px;
-      --container-width:360px;
-    }
-
-    html,body{
-      height:100%;
-      margin:0;
-      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: #fafafa;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      color: #222;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-      padding:40px 20px;
-    }
-
-    /* outer purple vertical box */
-    .vertical-box {
-      width: var(--container-width);
-      background: var(--bg);
-      border-radius: var(--outer-radius);
-      padding: 42px 28px;
-      box-sizing: border-box;
-      box-shadow: 0 6px 0 rgba(0,0,0,0.02) inset, 0 6px 22px rgba(0,0,0,0.06);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap: var(--gap);
-    }
-
-    /* heading near top */
-    .vb-heading{
-      text-align:center;
-      color: var(--accent);
-      font-weight:800;
-      font-size:22px;
-      line-height:1.05;
-      transform: translateY(-6px); /* visually higher like screenshot */
-      letter-spacing:0.2px;
-    }
-
-    /* wrapper for the list of small cards */
-    .card-list{
-      width:100%;
-      display:flex;
-      flex-direction:column;
-      gap: 22px;
-      padding-top:6px;
-    }
-
-    /* each white card */
-    .stat-card{
-      background: var(--card);
-      border-radius: var(--card-radius);
-      padding: 18px 22px;
-      box-sizing:border-box;
-      box-shadow: 0 6px 8px rgba(0,0,0,0.08);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      min-height:84px;
-    }
-
-    /* small label above the big number */
-    .stat-card .label{
-      font-size:16px;
-      color:var(--muted);
-      font-weight:600;
-      margin-bottom:8px;
-    }
-
-    .stat-card .big{
-      font-weight:800;
-      font-size:36px;
-      color:#111;
-      line-height:1;
-    }
-
-    /* a variant for the percent card (slightly larger number) */
-    .percent .big{
-      font-size:44px;
-      color:#111;
-    }
-
-    /* rupee symbol styling when used */
-    .rupee {
-      font-weight:900;
-      margin-right:6px;
-      font-size:26px;
-      vertical-align:middle;
-    }
-
-    /* small responsiveness: shrink container on very narrow screens */
-    @media (max-width:420px){
-      :root{ --container-width:320px; }
-      .vertical-box{ padding:32px 20px; }
-      .stat-card .big{ font-size:30px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="vertical-box" role="region" aria-label="CTC statistics">
-    <div class="vb-heading">Highest &amp;<br/>Average CTC</div>
-
-    <div class="card-list">
-      <div class="stat-card percent" aria-hidden="false">
-        <div class="label">Expected Increase in<br/>Salary Potential</div>
-        <div class="big">60<span style="font-size:18px; font-weight:700; margin-left:6px;">%</span></div>
-      </div>
-
-      <div class="stat-card" aria-hidden="false">
-        <div class="label">Average CTC</div>
-        <div class="big"><span class="rupee">₹</span>6.1 LPA</div>
-      </div>
-
-      <div class="stat-card" aria-hidden="false">
-        <div class="label">Highest CTC</div>
-        <div class="big"><span class="rupee">₹</span>36 LPA</div>
-      </div>
-
-      <!-- example extra card to show consistent spacing (you can remove) -->
-      <div class="stat-card" aria-hidden="true" style="opacity:0;">
-        <div class="label">&nbsp;</div>
-        <div class="big">&nbsp;</div>
-      </div>
-    </div>
-  </div>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                text-align: center;
+                font-family:Arial;
+                margin:0;
+                padding:0;
+                min-height:100vh;
+                background-color: azure;
+                justify-items: center;
+            }
+           .container{
+                background-color:lightgrey;
+                width:480px;
+                height:43em;
+                border-radius: 20px;
+                text-align: center;
+                justify-items: center;
+                display:flex;
+                flex-direction: column;
+                padding:20px;
+                gap:20px;
+                
+           }
+           .card{
+                background-color: beige;
+                width:60%;
+                border-radius: 10px;
+                padding:6px;
+                max-width: 600px;
+                margin-left: 79px;
+                
+            }
+        
+           h3{
+            color:darkmagenta;
+            padding:0px;
+            margin-bottom: 0px;
+            font-size: 50px;
+            margin-top: 24px;
+            margin-left:45px;
+           }
+           p{
+            font-size: 25px;
+           }
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <h3>Highest & Average CTC</h3>
+            <div class="card">
+                <p>Expected Increase in Salary Potential </p>
+                <h1>&#8377 60%</h1>
+            </div>
+            <div class="card">
+                <p>Average CTC </p>
+                <h1>&#8377 6.1LPA</h1>
+            </div>
+            <div class="card">
+                <p>Highest CTC</p>
+                <h1>&#8377 36LPA</h1>
+            </div>
+        </div>
+    </body>
 </html>
