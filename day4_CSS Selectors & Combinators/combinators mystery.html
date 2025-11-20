@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 20px;
+        background-color: #f8f9fc;
+        color: #222;
+    }
+
+    h1, h2 {
+        color: #1b2a47;
+    }
+
+    hr {
+        border: none;
+        border-top: 3px solid #d3dae0;
+        margin: 15px 0;
+    }
+
+    /* Navigation Styling */
+    nav {
+        background-color: #eaf2ff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    nav > ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    nav > ul > li {
+        display: inline;
+        margin-right: 20px;
+        border-bottom: 2px solid #4f6cff;
+    }
+
+    nav > ul > li:hover {
+        color: #0a58ca;
+        cursor: pointer;
+    }
+
+    /* Adjacent Sibling Combinator */
+    nav + h2 {
+        color: #d63384;
+        font-size: 24px;
+    }
+
+    /* Main Section */
+    main {
+        background-color: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 15px 20px;
+        margin-top: 15px;
+    }
+
+    /* Descendant Combinator */
+    main p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* Article and General Sibling Combinator */
+    article h3 {
+        color: #0056b3;
+    }
+
+    article h3 ~ p {
+        font-style: italic;
+        color: #555;
+    }
+
+    /* Sidebar */
+    aside {
+        background-color: #f2f8ff;
+        border-left: 5px solid #4f6cff;
+        padding: 10px 15px;
+        margin-top: 15px;
+        border-radius: 5px;
+    }
+
+    aside h2 {
+        color: #2a3f76;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 20px;
+        padding: 10px;
+        text-align: center;
+        background-color: #e3eafc;
+        border-top: 2px solid #c3d0f2;
+        border-radius: 8px;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 15px;
+        color: #333;
+    }
+</style>
+</head>
+
+<body>
+    <h1>⚡ Combinators Mastery</h1>
+
+    <h2>Objective:</h2>
+    <p>Use <b>CSS combinators</b> to apply targeted styles in a structured HTML document.</p>
+
+    <hr>
+
+    <h2>💡 Problem Statement</h2>
+    <p>Build a webpage layout using <b>HTML</b> and <b>CSS</b> to apply combinators effectively.</p>
+
+    <hr>
+
+    <h2>Instructions</h2>
+
+    <h3>1. Create a Navigation Bar</h3>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <h2>Main Content Section</h2>
+
+    <main>
+        <h2>2. Set Up Main Content</h2>
+        <article>
+            <h3>Article 1</h3>
+            <p>This is the first article's description.</p>
+        </article>
+
+        <article>
+            <h3>Article 2</h3>
+            <p>This is the second article's content, styled using sibling combinators.</p>
+        </article>
+    </main>
+
+    <aside>
+        <h2>3. Add a Sidebar</h2>
+        <ul>
+            <li>Recent Post 1</li>
+            <li>Recent Post 2</li>
+            <li>Recent Post 3</li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>© 2023 Company Name.</p>
+    </footer>
+</body>
+</html>

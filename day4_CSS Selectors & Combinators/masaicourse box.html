@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+  body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 50px 0;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #222;
+  }
+
+  /* Container */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  /* Each Card */
+  .card {
+    width: 320px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  /* Logo */
+  .card img {
+    width: 55px;
+    margin-bottom: 15px;
+  }
+
+  .card h3 {
+    font-size: 15px;
+    color: #555;
+    margin: 0 0 10px;
+  }
+
+  .card h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 15px;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: #444;
+    margin: 4px 0;
+  }
+
+  .card p span {
+    color: #e63946;
+    font-weight: 600;
+  }
+
+  /* Button Section */
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+  }
+
+  .buttons button {
+    border: 1px solid #e63946;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .buttons .learn {
+    background: #e63946;
+    color: #fff;
+  }
+
+  .buttons .brochure {
+    background: #fff;
+    color: #e63946;
+  }
+
+  .buttons button:hover {
+    opacity: 0.9;
+  }
+
+  .buttons button::after {
+    content: " →";
+  }
+
+  /* Highlighted Red Card */
+  .highlight {
+    background-color: #e63946;
+    color: #fff;
+  }
+
+  .highlight h3,
+  .highlight h2,
+  .highlight p {
+    color: #fff;
+  }
+
+  .highlight .buttons .learn {
+    background: #fff;
+    color: #e63946;
+  }
+
+  .highlight .buttons .brochure {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+</style>
+</head>
+
+<body>
+<h1>Masai Course Cards</h1>
+
+<div class="container">
+  <div class="card">
+    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/IIM_Sirmaur.png" alt="IIM Sirmaur">
+    <h3>IIM Sirmaur</h3>
+    <h2>EDGE: Essentials of Data Analytics, Gen AI & Execution</h2>
+    <p>06 months | Online</p>
+    <p>Qualifier test - <span>12th Nov 2025</span></p>
+    <div class="buttons">
+      <button class="learn">Learn more</button>
+      <button class="brochure">Brochure</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/IIT_Patna.png" alt="IIT Patna">
+    <h3>Vishlesan i-Hub IIT Patna</h3>
+    <h2>Product Management and Agentic AI</h2>
+    <p>06 months | Online</p>
+    <p>Qualifier test - <span>12th Nov 2025</span></p>
+    <div class="buttons">
+      <button class="learn">Learn more</button>
+      <button class="brochure">Brochure</button>
+    </div>
+  </div>
+
+  <div class="card highlight">
+    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/IIT_Patna.png" alt="IIT Patna">
+    <h3>Vishlesan i-Hub IIT Patna</h3>
+    <h2>Certification Program in Data Analytics with Gen & Agentic AI</h2>
+    <p>06 months | Online</p>
+    <p>Qualifier test - <span>9th Nov 2025</span></p>
+    <div class="buttons">
+      <button class="learn">Learn more</button>
+      <button class="brochure">Brochure</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/IIM_Trichy.png" alt="IIM Trichy">
+    <h3>IIM Trichy</h3>
+    <h2>Product Management in the Agentic AI Era</h2>
+    <p>06 months | Online</p>
+    <p>Qualifier test - <span>12th Nov 2025</span></p>
+    <div class="buttons">
+      <button class="learn">Learn more</button>
+      <button class="brochure">Brochure</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/IIT_Roorkee.png" alt="IIT Roorkee">
+    <h3>iHUB DivyaSampark, IIT Roorkee</h3>
+    <h2>Future-Ready Product Management with Applied AI Program</h2>
+    <p>06 months | Online</p>
+    <p>Qualifier test - <span>12th Nov 2025</span></p>
+    <div class="buttons">
+      <button class="learn">Learn more</button>
+      <button class="brochure">Brochure</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://masai-course.s3.ap-south-1.amazonaws.com/NMIMS.png" alt="NMIMS">
+    <h3>NMIMS CDOE</h3>
+    <h2>Online MBA</h2>
+    <p>02 Years | Online</p>
+    <p>Qualifier test - <span>12th Nov 2025</span></p>
+    <div class="buttons">
+      <button class="learn">Learn more</button>
+      <button class="brochure">Brochure</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
