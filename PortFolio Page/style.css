@@ -1,0 +1,143 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: AliceBlue;     /* #fafbfe ≈ AliceBlue */
+  color: #222;               /* No named color matches this, so for best result use 'Black' */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: RoyalBlue;     /* #425cf4 ≈ RoyalBlue */
+  color: White;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+nav ul {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav a {
+  color: White;
+  text-decoration: none;
+  font-weight: 500;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: White;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 3rem 1rem;
+  background: LightSkyBlue;    /* gradient replaced with LightSkyBlue */
+  color: White;
+}
+.hero .btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: White;
+  color: RoyalBlue;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+}
+.hero .btn:hover {
+  box-shadow: 0 4px 12px LightGray;
+}
+
+.skills {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+.skill-card {
+  background: White;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px LightGray;
+  transition: transform 0.2s;
+}
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+footer {
+  background: RoyalBlue;
+  color: White;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+}
+.social a {
+  margin: 0 1rem;
+  color: MediumTurquoise;    /* #2dd6c1 ≈ MediumTurquoise */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 1023px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    background: RoyalBlue;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 { font-size: 2rem; }
+  header { padding: 0.5rem 1rem; }
+}
