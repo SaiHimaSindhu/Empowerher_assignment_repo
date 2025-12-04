@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enhanced Todo List</title>
+  <style>
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enhanced Todo List</h1>
+
+  <input id="taskInput" type="text" placeholder="Add a new task" />
+  <button id="addBtn">Add Task</button>
+
+  <br /><br />
+
+  <input id="searchInput" type="text" placeholder="Search tasks..." />
+
+  <ul id="taskList"></ul>
+
+  <script>
+    const STORAGE_KEY = 'tasks';
+    const taskInput = document.getElementById('taskInput');
+    const addBtn = document.getElementById('addBtn');
+    const searchInput = document.getElementById('searchInput');
+    const taskList = document.getElementById('taskList');
+
+    let tasks = [];
+
+    // Load tasks from localStorage on page load
+    window.addEventListener('load', () => {
+      const saved = localStorage.getItem(STORAGE_KEY); // stored as JSON string[web:57]
+      if (saved) {
+        tasks = JSON.parse(saved);                     // convert to array of objects[web:60]
+        renderTasks();
+      }
+    });
+
+    function saveTasks() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); // persist array[web:66]
+    }
+
+    function createTask(text) {
+      return {
+        id: Date.now(),        // simple unique id
+        text,
+        completed: false
+      };
+    }
+
+    // Add task
+    addBtn.addEventListener('click', () => {
+      const text = taskInput.value.trim();
+      if (!text) return;
+
+      const task = createTask(text);
+      tasks.push(task);
+      saveTasks();
+      taskInput.value = '';
+      renderTasks();
+    });
+
+    // Render tasks with search filter
+    function renderTasks() {
+      const query = searchInput.value.toLowerCase();
+      taskList.innerHTML = '';
+
+      tasks
+        .filter(task => task.text.toLowerCase().includes(query)) // real-time search[web:67]
+        .forEach(task => {
+          const li = document.createElement('li');
+
+          const span = document.createElement('span');
+          span.textContent = task.text;
+          if (task.completed) {
+            span.classList.add('completed');
+          }
+
+          // Toggle complete on click
+          span.addEventListener('click', () => {
+            task.completed = !task.completed;
+            saveTasks();
+            renderTasks();
+          });
+
+          // Delete button
+          const delBtn = document.createElement('button');
+          delBtn.textContent = 'Delete';
+          delBtn.addEventListener('click', () => {
+            tasks = tasks.filter(t => t.id !== task.id);
+            saveTasks();
+            renderTasks();
+          });
+
+          li.appendChild(span);
+          li.appendChild(delBtn);
+          taskList.appendChild(li);
+        });
+    }
+
+    // Re-render on each search keystroke
+    searchInput.addEventListener('input', renderTasks);
+  </script>
+</body>
+</html>
