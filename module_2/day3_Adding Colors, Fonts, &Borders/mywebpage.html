@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            header {
+                border: 3px solid black;
+                padding: 5px;
+                text-align: center;
+                background-color: grey;
+            }
+            body {
+                font-family: "Arial";
+            }
+            nav a{
+                text-decoration: none;
+            }
+            nav a:hover{
+                text-decoration:underline;
+            }
+            img{
+                width:400px;
+                border-radius: 50%;
+                box-shadow:5px 5px 15px rgba(0, 0,0, 0.5)
+            }
+            table{
+                border-collapse: collapse;
+            }
+            tr:nth-child(even) {
+                background-color: blue;
+            }
+             tr:nth-child(odd) {
+                background-color:grey;
+            }
+            button{
+                background-color: lightblue;
+                color: black;
+                padding: 10px;
+            }
+            button:hover{
+                text-decoration: underline;
+                background-color: blue;
+                color:white;
+            }
+            p{
+                text-align: justify;
+                color:darkgrey;
+                border: 2px solid black;
+            }
+            footer{
+                background-color: darkgrey;
+                font-size: smaller;
+                text-align: center;
+            }
+            
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1 style="background-color: lightgrey; color:darkblue;font-size: 40px;">Welcome to My Webpage</h1>
+            <h2 style="color:green;font-size: 29px;"><b>Learning Web Development</b></h2>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        <img src="https://cdn.3dnames.co/previews/wt06/1000x1000/s/wt06sindhu3dxx.webp" alt="name" >
+        <table border="1">
+            <tr>
+                <th style="border-color:red">name</th>
+                <th style="border-color:green">age</th>
+                <th style="border-color:blue">gender</th>
+            </tr>
+            <tr>
+                <td style="border-color:darkblue">sindhu</td>
+                <td style="border-color:darkgrey">22</td>
+                <td style="border-color:brown">female</td>
+            </tr>
+             <tr>
+                <td style="border-color:violet">pavani</td>
+                <td style="border-color:purple">45</td>
+                <td style="border-color: pink">female</td>
+            </tr>
+        </table>
+        <button>Learn More</button>
+        <p>These data is about my family</p>
+        <form>
+            <label>Name</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label>Email</label>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="submit"></input>
+        </form>
+        <footer>
+            &copy; 2025 statement
+        </footer>
+    </body>
+</html>
