@@ -1,0 +1,17 @@
+/* Navbar.css */
+.nav {
+  display: flex;
+  gap: 16px;
+  padding: 12px 24px;
+  background: #f5f5f5;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+}
+
+.link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
