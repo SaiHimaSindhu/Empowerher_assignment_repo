@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tailwind CSS Basics Exploration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- 8. Navigation Bar -->
+<nav class="bg-white shadow p-4 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+  <h1 class="text-xl font-bold">Tailwind UI</h1>
+  <div class="flex flex-col md:flex-row gap-4">
+    <a href="#" class="hover:text-blue-600">Home</a>
+    <a href="#" class="hover:text-blue-600">Features</a>
+    <a href="#" class="hover:text-blue-600">Contact</a>
+  </div>
+</nav>
+
+<!-- Main Container -->
+<div class="max-w-6xl mx-auto p-6 space-y-12">
+
+  <!-- 3. Responsive Text -->
+  <h2 class="font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text
+             text-xl md:text-3xl lg:text-5xl">
+    Responsive Gradient Heading
+  </h2>
+
+  <!-- 1. Button Styling -->
+  <button class="px-6 py-2 rounded bg-gray-200 hover:bg-gray-300 active:bg-gray-400 transition">
+    Click Me
+  </button>
+
+  <!-- 2. Image with Hover Effect -->
+  <div class="w-64 overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+    <img src="https://via.placeholder.com/300" alt="Sample Image">
+  </div>
+
+  <!-- 4. List Styling -->
+  <ul class="list-disc list-inside pl-5 space-y-2">
+    <li class="hover:text-blue-600">HTML</li>
+    <li class="hover:text-blue-600">CSS</li>
+    <li class="hover:text-blue-600">Tailwind</li>
+  </ul>
+
+  <!-- 5. Card Component -->
+  <div class="bg-white rounded-lg shadow-lg w-72">
+    <img src="https://via.placeholder.com/300" class="rounded-t-lg">
+    <div class="p-4 space-y-2">
+      <h3 class="font-bold text-lg">Card Title</h3>
+      <p class="text-gray-600">This is a simple Tailwind card component.</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Read More
+      </button>
+    </div>
+  </div>
+
+  <!-- 6. Table Styling -->
+  <table class="w-full border border-gray-300 text-center">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border p-2">Name</th>
+        <th class="border p-2">Role</th>
+        <th class="border p-2">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-gray-100">
+        <td class="border p-2">Alex</td>
+        <td class="border p-2">Developer</td>
+        <td class="border p-2">Active</td>
+      </tr>
+      <tr class="bg-gray-50 hover:bg-gray-100">
+        <td class="border p-2">Sara</td>
+        <td class="border p-2">Designer</td>
+        <td class="border p-2">Active</td>
+      </tr>
+      <tr class="hover:bg-gray-100">
+        <td class="border p-2">John</td>
+        <td class="border p-2">Tester</td>
+        <td class="border p-2">Inactive</td>
+      </tr>
+      <tr class="bg-gray-50 hover:bg-gray-100">
+        <td class="border p-2">Emma</td>
+        <td class="border p-2">Manager</td>
+        <td class="border p-2">Active</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 7. Input Form -->
+  <form class="bg-white p-6 rounded-lg shadow-lg max-w-md space-y-4">
+    <input type="text" placeholder="Name"
+      class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <input type="email" placeholder="Email"
+      class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <input type="password" placeholder="Password"
+      class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <button class="bg-green-500 text-white w-full py-2 rounded hover:bg-green-600">
+      Submit
+    </button>
+  </form>
+
+  <!-- 9. Responsive Grid Layout -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white p-4 rounded shadow">Card 1</div>
+    <div class="bg-white p-4 rounded shadow">Card 2</div>
+    <div class="bg-white p-4 rounded shadow">Card 3</div>
+    <div class="bg-white p-4 rounded shadow">Card 4</div>
+    <div class="bg-white p-4 rounded shadow">Card 5</div>
+    <div class="bg-white p-4 rounded shadow">Card 6</div>
+  </div>
+
+  <!-- 10. Mini Responsive Page (Combined) -->
+  <section class="space-y-6">
+    <h2 class="text-2xl font-bold">Mini Responsive Page</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded shadow">Feature One</div>
+      <div class="bg-white p-4 rounded shadow">Feature Two</div>
+      <div class="bg-white p-4 rounded shadow">Feature Three</div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
