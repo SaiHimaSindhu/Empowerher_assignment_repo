@@ -1,0 +1,117 @@
+SQL CRUD Operations using Supabase SQL Editor
+
+--------------------------------------------
+STEP 1: CREATE TABLE
+--------------------------------------------
+
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    age INTEGER,
+    course TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+Output:
+Table "students" created successfully.
+
+
+--------------------------------------------
+STEP 2: INSERT DATA
+--------------------------------------------
+
+INSERT INTO students (name, email, age, course) VALUES
+('Rahul Sharma', 'rahul.sharma@gmail.com', 22, 'Computer Science'),
+('Anjali Verma', 'anjali.verma@gmail.com', 20, 'Information Technology'),
+('Suresh Kumar', 'suresh.kumar@gmail.com', 24, 'Data Science'),
+('Priya Singh', 'priya.singh@gmail.com', 19, 'Computer Science'),
+('Amit Patel', 'amit.patel@gmail.com', 26, 'Artificial Intelligence'),
+('Neha Reddy', 'neha.reddy@gmail.com', 21, 'Data Science');
+
+Output:
+INSERT 0 6 (6 rows inserted successfully)
+
+
+--------------------------------------------
+STEP 3: READ DATA
+--------------------------------------------
+
+-- Fetch all students
+SELECT * FROM students;
+
+Output:
+6 rows returned.
+
+
+-- Fetch students older than 20
+SELECT * FROM students WHERE age > 20;
+
+Output:
+4 rows returned.
+
+
+-- Fetch only name and email
+SELECT name, email FROM students;
+
+Output:
+6 rows returned.
+
+
+-- Fetch students enrolled in Data Science
+SELECT * FROM students WHERE course = 'Data Science';
+
+Output:
+2 rows returned.
+
+
+--------------------------------------------
+STEP 4: UPDATE DATA
+--------------------------------------------
+
+-- Update age of Rahul Sharma
+UPDATE students
+SET age = 23
+WHERE name = 'Rahul Sharma';
+
+Output:
+UPDATE 1 (1 row affected)
+
+
+-- Update course from Artificial Intelligence to AI & ML
+UPDATE students
+SET course = 'AI & ML'
+WHERE course = 'Artificial Intelligence';
+
+Output:
+UPDATE 1 (1 row affected)
+
+
+--------------------------------------------
+STEP 5: DELETE DATA
+--------------------------------------------
+
+-- Delete one student using id
+DELETE FROM students
+WHERE id = 4;
+
+Output:
+DELETE 1 (1 row deleted)
+
+
+-- Delete students below age 20
+DELETE FROM students
+WHERE age < 20;
+
+Output:
+DELETE 1 (1 row deleted)
+
+
+--------------------------------------------
+FINAL DATA
+--------------------------------------------
+
+SELECT * FROM students;
+
+Output:
+Remaining records displayed successfully.
