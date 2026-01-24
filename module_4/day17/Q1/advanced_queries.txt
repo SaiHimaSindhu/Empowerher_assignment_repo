@@ -1,0 +1,147 @@
+Advanced SQL Queries on students table (Supabase)
+
+--------------------------------------------------
+STEP 2: AGGREGATE QUERIES
+--------------------------------------------------
+
+1) Count total number of students
+
+SELECT COUNT(*) AS total_students
+FROM students;
+
+Output:
+total_students
+--------------
+4
+
+
+2) Find average age of students
+
+SELECT AVG(age) AS average_age
+FROM students;
+
+Output:
+average_age
+------------
+23.5
+
+
+3) Find minimum and maximum age
+
+SELECT MIN(age) AS min_age,
+       MAX(age) AS max_age
+FROM students;
+
+Output:
+min_age | max_age
+------------------
+21      | 26
+
+
+4) Count how many students are enrolled in each course
+
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course;
+
+Output:
+course                 | student_count
+--------------------------------------
+Computer Science       | 1
+Data Science           | 2
+AI & ML                | 1
+
+
+5) Count students whose age is greater than 20
+
+SELECT COUNT(*) AS students_above_20
+FROM students
+WHERE age > 20;
+
+Output:
+students_above_20
+-----------------
+4
+
+
+--------------------------------------------------
+STEP 3: GROUPING & FILTERING
+--------------------------------------------------
+
+1) Display course-wise student count
+
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course;
+
+Output:
+course                 | student_count
+--------------------------------------
+Computer Science       | 1
+Data Science           | 2
+AI & ML                | 1
+
+
+2) Display only courses where student count > 1
+
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course
+HAVING COUNT(*) > 1;
+
+Output:
+course       | student_count
+-----------------------------
+Data Science | 2
+
+
+3) Display courses sorted by highest student count first
+
+SELECT course, COUNT(*) AS student_count
+FROM students
+GROUP BY course
+ORDER BY student_count DESC;
+
+Output:
+course                 | student_count
+--------------------------------------
+Data Science           | 2
+Computer Science       | 1
+AI & ML                | 1
+
+
+--------------------------------------------------
+STEP 4: ORDERING & LIMITING
+--------------------------------------------------
+
+1) Fetch latest 3 students based on created_at
+
+SELECT *
+FROM students
+ORDER BY created_at DESC
+LIMIT 3;
+
+Output:
+3 rows returned (latest students)
+
+
+2) Fetch top 5 oldest students
+
+SELECT *
+FROM students
+ORDER BY age DESC
+LIMIT 5;
+
+Output:
+4 rows returned (sorted by age descending)
+
+
+3) Fetch students enrolled in Data Science sorted by age descending
+
+SELECT *
+FROM students
+WHERE course = 'Data Science'
+ORDER BY age DESC;
+
+Output:
+2 rows returned
